@@ -1,0 +1,28 @@
+.repo-list h4 {
+	margin-bottom: 0;
+}
+
+.inner-addon {
+    font-size: 12px;
+    position: relative;
+    color: #959595;
+}
+
+.inner-addon i {
+    position: absolute;
+    padding: 15px 8px;
+}
+
+.inner-addon .form-control {
+    height: 40px;
+    border-color: #ececec;
+    color: #959595;
+    font-size: 14px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-bottom: 15px;
+}
+
+.inner-addon input {
+    padding-left: 30px;
+}

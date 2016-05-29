@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Repositories for <span class="bolded">{{vm.user.name}}</span> <span class="badge">{{vm.user.repoCount}}</span>
+    </div>
+    <div class="panel-body">
+        <div outside-click="vm.filerActive = false">
+            <div class="inner-addon">
+                <i class="glyphicon glyphicon-search"></i>
+                <input class="form-control ng-pristine ng-valid" type="text" ng-model="vm.search.name"
+                       ng-focus="vm.filerActive = true" placeholder="Search Repositories"/>
+            </div>
+            <div class="list-group list-group-choose repo-list">
+                <div class="list-group-item" ng-repeat="repo in vm.repos | filter:vm.search:strict"
+                     ng-click="vm.selectAdaccount(account, $index)">
+                    <h4>{{repo.name}}</h4>
+                    <span class="brand-link" ng-if="account.brand_is_connected">
+                        <i class='icon-solid_icon_traffic'></i> {{vm.brand.name}}
+                    </span>
+                    <span class="account-id"> #{{repo.description}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

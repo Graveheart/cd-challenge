@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>{{vm.heading}}</h2>
+        <table class="roles table table-hover table-striped table-bordered table-changeRoleable table-highlight-head">
+            <thead>
+            <tr>
+                <th class="col-md-1">Avatar</th>
+                <th>Username</th>
+                <th class="text-center">
+                    Administrator
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in vm.users">
+                <td>
+                    <span class="thumbnail">
+                        <img ng-src="{{user.avatar_url}}" alt="{{user.login}}">
+                    </span>
+                </td>
+                <td>{{user.login}}</td>
+                <td class="text-center col-md-1" ng-switch="user.site_admin">
+                    <i class="glyphicon glyphicon-ok" ng-switch-when="true"></i>
+                    <i class="glyphicon glyphicon-cancel" ng-switch-when="false"></i>
+                </td>
+                <td class="text-center col-md-2">
+                    <button class="btn btn-info" ng-click="vm.viewFollowers(user)">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"
+                              ></span>
+                        View followers
+                    </button>
+                    <button class="btn btn-warning" ng-click="vm.viewRepos(user)">
+                        <span class="glyphicon glyphicon-tasks" aria-hidden="true"
+                                ></span>
+                        View repositories
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
