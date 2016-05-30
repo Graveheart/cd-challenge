@@ -1,6 +1,6 @@
 module.exports = function() {
     var app = './app/';
-    var build = './app/build';
+    var build = app + 'build/';
     var scripts = app + 'src/';
     var styles = app + 'styles/';
     var wiredep = require('wiredep');
@@ -33,15 +33,15 @@ module.exports = function() {
                 transformUrl: function(url) {
                 	return url.replace('src', '')
                 }
-            }
+            },
+            directory: scripts+'core'
         },
         /**
         * Bower locations
         */
         bower: {
             bowerJson: require('./bower.json'),
-            directory: app+'bower_components/',
-            ignorePath: /^(\.\.\/)*\.\./
+            directory: app+'bower_components/'
         },
     };
     return config;

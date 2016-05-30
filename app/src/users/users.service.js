@@ -20,7 +20,7 @@
 
         function getUsers() {
             return User.query().$promise.then(function (data) {
-                return {users: mapUsers(data)}
+                return {users: mapUsers(data)};
             });
         }
 

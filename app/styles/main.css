@@ -2,6 +2,10 @@
 	margin-bottom: 0;
 }
 
+.repo-list .list-group-item {
+    height: 60px;
+}
+
 .inner-addon {
     font-size: 12px;
     position: relative;
@@ -18,11 +22,45 @@
     border-color: #ececec;
     color: #959595;
     font-size: 14px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
     margin-bottom: 15px;
 }
 
 .inner-addon input {
     padding-left: 30px;
 }
+
+.repo-desc {
+    font-size: 12px;
+    color: #959595;
+}
+
+.badge {float: right;}
+
+.badge.green-badge {
+    background-color: #dff0d8;
+    color: #2b542c;
+}
+
+.badge.red-badge {
+    background-color: #f2dede;
+    color: #843534;
+}
+.rating {
+    float: right;
+    display: inline-block;
+    min-width: 10px;
+    padding: 0px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fd0;
+}
+.date-col {
+    font-size: 12px;
+}
+.date-label {
+    float: left;
+    font-weight: bold;
+}
+
+.date {margin-left: 10px; }

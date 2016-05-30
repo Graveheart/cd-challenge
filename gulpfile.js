@@ -3,18 +3,6 @@ var config = require('./gulp.config')();
 
 var $ = require('gulp-load-plugins')({lazy: true});
 
-//Wire up the bower css&js into the html
-gulp.task('wiredep', function() {
-    var options = config.bower;
-    var wiredep = require('wiredep').stream;
-
-    return gulp
-        .src(config.index) //index.html
-        .pipe(wiredep(options))
-        .pipe($.inject(gulp.src(config.js))) //bower component files
-        .pipe(gulp.dest(config.app));
-});
-
 gulp.task('inject', function() {
     var options = config.bower;
     var wiredep = require('wiredep').stream;
@@ -28,6 +16,12 @@ gulp.task('inject', function() {
                 ignorePath: '/app',
                 addRootSlash: true
             })) //css files
+        .pipe($.inject(gulp.src(config.build+'app.js', {read: false}),
+         // Options
+         {
+             ignorePath: '/app',
+             addRootSlash: true
+         }))
         .pipe(gulp.dest(config.app));
 });
 
@@ -55,7 +49,7 @@ gulp.task('watch', function() {
 gulp.task('optimize', ['inject'], function() {
     log('Optimizing the javascript, css, html');
 
-    var templateCache = config.temp + config.templateCache.file;
+    var templateCache = config.templateCache.directory + config.templateCache.file;
     var cssFilter = $.filter('**/*.css');
     var jsFilter = $.filter('**/*.js');
 
@@ -78,10 +72,12 @@ gulp.task('templatecache', function() {
                 config.templateCache.file,
                 config.templateCache.options
             ))
-        .pipe(gulp.dest(config.scripts+'core'));
+        .pipe(gulp.dest(config.templateCache.directory));
 });
 
-gulp.task('build', ['inject', 'templatecache']);
+gulp.task('build', ['optimize', 'templatecache', 'watch']);
+
+gulp.task('default', ['build']);
 
 function log(msg) {
     if (typeof (msg) === 'object') {
