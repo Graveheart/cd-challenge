@@ -1,7 +1,7 @@
 module.exports = function() {
     var app = './app/';
     var build = app + 'build/';
-    var scripts = app + 'src/';
+    var src = app + 'src/';
     var styles = app + 'styles/';
     var wiredep = require('wiredep');
 
@@ -9,18 +9,17 @@ module.exports = function() {
 
         index: app + 'index.html',
         htmltemplates: [
-            app + '**/*.html',
-            '!' + app +'/index.html'
+            src + '**/*.html'
         ],
         app: app,
         build: build,
-        scripts: scripts,
+        src: src,
         css: [
             styles + '*.css',
         ],
         js: [
-            scripts + '**/**.module.js',
-            scripts + '**/**.js',
+            src + '**/**.module.js',
+            src + '**/**.js',
         ],
         /**
          * template cache
@@ -34,7 +33,7 @@ module.exports = function() {
                 	return url.replace('src', '')
                 }
             },
-            directory: scripts+'core'
+            directory: src+'core'
         },
         /**
         * Bower locations

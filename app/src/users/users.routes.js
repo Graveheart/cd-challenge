@@ -16,7 +16,7 @@
 	            state: 'users',
 	            config: {
 	                url: '/users/',
-	                templateUrl: '/users/views/users.html',
+	                templateUrl: 'users/views/users.html',
 	                controller: 'UsersController',
 	                controllerAs: 'vm',
 	                resolve: {
@@ -31,7 +31,7 @@
 	            state: 'followers',
 	            config: {
 	                url: '/user/:username/followers',
-	                templateUrl: '/users/views/users.html',
+	                templateUrl: 'users/views/users.html',
 	                controller: 'UsersController',
 	                controllerAs: 'vm',
 	                resolve: {
@@ -47,7 +47,7 @@
                 state: 'repos',
                 config: {
                     url: '/user/:username/repos',
-                    templateUrl: '/users/views/repos.html',
+                    templateUrl: 'users/views/repos.html',
                     controller: 'ReposController',
                     controllerAs: 'vm',
                     resolve: {

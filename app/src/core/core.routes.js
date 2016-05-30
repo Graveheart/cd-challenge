@@ -9,7 +9,7 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: '/core/views/welcome.html',
+                templateUrl: 'core/views/welcome.html',
             });
         $urlRouterProvider.otherwise('/');
     }

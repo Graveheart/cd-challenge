@@ -14,6 +14,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
     <!-- endbower -->
 
     <title>ChurchDesk Front-End Challenge</title>
@@ -44,21 +45,24 @@
 
     <div class="container-fluid" data-ui-view>
     </div>
+
+    <toaster-container toaster-options="{'time-out': 1500, 'close-button':false, 'animation-class': 'toast-top-center', 'debug': true}"></toaster-container>
+    <!-- Scripts -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular-underscore/angular-underscore.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <script src="/build/app.js"></script>
+    <!-- endinject -->
   </body>
-
-  <!-- Scripts -->
-  <!-- bower:js -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src="bower_components/underscore/underscore.js"></script>
-  <script src="bower_components/angular-underscore/angular-underscore.js"></script>
-  <!-- endbower -->
-
-  <!-- inject:js -->
-  <script src="/build/app.js"></script>
-  <!-- endinject -->
 </html>
